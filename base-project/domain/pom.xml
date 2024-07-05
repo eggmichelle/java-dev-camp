@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>za.co.entelect</groupId>
+        <artifactId>base-project</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>domain</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--    used for openapitools    -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>5.0.0-alpha.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>5.0.0-alpha.12</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gsonfire</groupId>
+            <artifactId>gson-fire</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-reflect</artifactId>
+            <version>3.7</version>
+        </dependency>
+        <!--    used for wsdl generation    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+        <!--                                -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>7.2.0</version>
+                <executions>
+                    <!-- Customer Information API Client Generation -->
+                    <execution>
+                        <id>generate-customer-api-client</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../../back-end-devcamp-starter/customer-information.yaml
+                            </inputSpec>
+                            <generatorName>java</generatorName>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/client/cis</sourceFolder>
+                                <apiPackage>za.co.entelect.client.cis.api</apiPackage>
+                                <modelPackage>za.co.entelect.client.cis.models</modelPackage>
+                                <supportingFilesToGenerate>
+                                    CisApiClient.java
+                                </supportingFilesToGenerate>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+
+                    <!-- DHA API Client Generation -->
+                    <execution>
+                        <id>generate-dha-api-client</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../../back-end-devcamp-starter/dha.yaml</inputSpec>
+                            <generatorName>java</generatorName>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/client/dha</sourceFolder>
+                                <apiPackage>za.co.entelect.client.dha.api</apiPackage>
+                                <modelPackage>za.co.entelect.client.dha.models</modelPackage>
+                                <supportingFilesToGenerate>
+                                    DhaApiClient.java
+                                </supportingFilesToGenerate>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+
+                    <!-- Login API Client Generation -->
+                    <execution>
+                        <id>generate-login-api-client</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../../back-end-devcamp-starter/login.yml</inputSpec>
+                            <generatorName>java</generatorName>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/client/login</sourceFolder>
+                                <apiPackage>za.co.entelect.client.login.api</apiPackage>
+                                <modelPackage>za.co.entelect.client.login.models</modelPackage>
+                                <supportingFilesToGenerate>
+                                    LoginApiClient.java
+                                </supportingFilesToGenerate>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+
+                    <!-- KYC API Client Generation -->
+                    <execution>
+                        <id>generate-kyc-api-client</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../../back-end-devcamp-starter/kyc.yaml</inputSpec>
+                            <generatorName>java</generatorName>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/client/kyc</sourceFolder>
+                                <apiPackage>za.co.entelect.client.kyc.api</apiPackage>
+                                <modelPackage>za.co.entelect.client.kyc.models</modelPackage>
+                                <supportingFilesToGenerate>
+                                    KycApiClient.java
+                                </supportingFilesToGenerate>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packageName>za.co.entelect.client.creditcheck</packageName>
+                    <wsdlFiles>
+                        <wsdlFile>${project.basedir}/../../back-end-devcamp-starter/creditcheck.wsdl</wsdlFile>
+                    </wsdlFiles>
+                    <sourceDestDir>${sourcesDir}</sourceDestDir>
+                    <destDir>${classesDir}</destDir>
+                    <extension>true</extension>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
