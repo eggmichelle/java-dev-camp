@@ -1,0 +1,12 @@
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\ProductsApplication.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\config\JWTConfig.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\config\OpenAPIClientConfiguration.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\controllers\OrderController.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\controllers\ProductController.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\converters\JWTConverter.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\config\RabbitMQConfig.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\converters\JwtRoleConverter.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\services\ProductMessageService.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\controllers\CartItemController.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\config\SecurityConfig.java
+C:\Development\entelect-boot-camp-2024-storm\base-project\productsApi\src\main\java\za\co\entelect\controllers\CustomerController.java

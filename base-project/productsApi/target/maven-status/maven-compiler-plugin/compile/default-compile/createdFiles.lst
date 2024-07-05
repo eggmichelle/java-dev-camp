@@ -1,0 +1,12 @@
+za\co\entelect\services\ProductMessageService.class
+za\co\entelect\config\JWTConfig.class
+za\co\entelect\controllers\CustomerController.class
+za\co\entelect\config\RabbitMQConfig.class
+za\co\entelect\config\OpenAPIClientConfiguration.class
+za\co\entelect\controllers\ProductController.class
+za\co\entelect\ProductsApplication.class
+za\co\entelect\config\SecurityConfig.class
+za\co\entelect\controllers\CartItemController.class
+za\co\entelect\converters\JWTConverter.class
+za\co\entelect\controllers\OrderController.class
+za\co\entelect\converters\JwtRoleConverter.class
