@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>VIP Investment Product Agreement</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">VIP Investment Product Agreement</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Investment Firm</span></p>
+        </div>
+        <div class="row">
+            <p><b>Investor: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Investment Account Number: </b><span>INV-789564268</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span th:text="${endDate}"></span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Investment Details:</h4>
+<p>This VIP Investment Product Agreement provides an exclusive investment opportunity tailored for VIP customers with a Net Asset Value (NAV) exceeding 150 Million.</p>
+
+<h4>Investment Strategy:</h4>
+<p>The investor agrees to participate in an investment strategy specifically designed to maximize returns for high net-worth individuals, leveraging sophisticated investment vehicles and strategies.</p>
+
+<h4>Minimum Investment Requirement:</h4>
+<p>The investor acknowledges and agrees to meet the minimum investment requirement of R<span th:text="${orderItem.getProduct().getPrice()}"></span>.00 in order to participate in this VIP investment product.</p>
+
+<h4>Tailored Portfolio Management:</h4>
+<p>The provider shall provide personalized portfolio management services, taking into account the investor's financial goals, risk tolerance, and investment preferences.</p>
+
+<h4>Expected Returns:</h4>
+<p>The investment aims to generate attractive returns commensurate with the investor's VIP status and investment profile.</p>
+
+<h4>Term and Maturity:</h4>
+<p>The investment term shall be for the agreed-upon duration, with the option for the investor to extend or terminate the investment at maturity.</p>
+
+<h4>Confidentiality and Privacy:</h4>
+<p>The provider agrees to maintain strict confidentiality and privacy regarding the investor's personal and financial information, in accordance with industry standards and regulations.</p>
+
+<h4>Governing Law:</h4>
+<p>This agreement shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Investor: ___________________________ Date: ________________</p>
+
+<p class="small-text">By signing below, the parties acknowledge that they have read and agree to the terms and conditions outlined in this VIP Investment Product Agreement.</p>
+</body>
+</html>

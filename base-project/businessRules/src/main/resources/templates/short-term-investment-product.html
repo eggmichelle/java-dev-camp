@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Short-Term Investment Product Agreement</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Short-Term Investment Product Agreement</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Investment Company Ltd.</span></p>
+        </div>
+        <div class="row">
+            <p><b>Investor: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Investment Account Number: </b><span>INV-795126</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span th:text="${endDate}"></span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Investment Details:</h4>
+<p>This Short-Term Investment Product Agreement allows the investor to invest their money over a short period of time, specifically for a 32-day fixed deposit.</p>
+
+<h4>Investment Amount:</h4>
+<p>The investor agrees to deposit an amount of R<span th:text="${orderItem.getProduct().getPrice()}"></span>.00 into the investment account for the specified duration.</p>
+
+<h4>Interest Rate:</h4>
+<p>The investment shall accrue interest at a rate of 4.5% per annum, compounded daily.</p>
+
+<h4>Term and Renewal:</h4>
+<p>The investment term shall be for the specified duration, after which the investment shall mature. The investor may choose to renew the investment upon maturity subject to the terms and conditions agreed upon by both parties.</p>
+
+<h4>Withdrawal Restrictions:</h4>
+<p>The investor agrees not to withdraw the investment before the maturity date unless otherwise agreed upon by both parties. Early withdrawal may result in penalties or loss of accrued interest.</p>
+
+<h4>Risk Disclosure:</h4>
+<p>The investor acknowledges that all investments carry inherent risks, and the provider shall not be held liable for any loss of principal or investment returns.</p>
+
+<h4>Governing Law:</h4>
+<p>This agreement shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Investor: ___________________________ Date: ________________</p>
+
+<p class="small-text">By signing below, the parties acknowledge that they have read and agree to the terms and conditions outlined in this Short-Term Investment Product Agreement.</p>
+</body>
+</html>

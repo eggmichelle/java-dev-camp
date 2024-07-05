@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Islamic Investment Product Agreement</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Islamic Investment Product Agreement</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Islamic Investment Company</span></p>
+        </div>
+        <div class="row">
+            <p><b>Investor: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Investment Account Number: </b><span>INV-987654321</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span th:text="${endDate}"></span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Investment Details:</h4>
+<p>This Islamic Investment Product Agreement provides a way for Islamic customers to invest their money in accordance with Islamic principles and Shariah law.</p>
+
+<h4>Investment Strategy:</h4>
+<p>The investor agrees to invest their money in accordance with Islamic investment principles, which prohibit investments in certain industries such as alcohol, gambling, and pork-related products. The provider shall manage the investment portfolio in compliance with Shariah guidelines.</p>
+
+<h4>Investment Amount:</h4>
+<p>The investor agrees to deposit an initial investment amount of R<span th:text="${orderItem.getProduct().getPrice()}"></span>.00 into the investment account, with the option to make additional contributions as specified by the provider.</p>
+
+<h4>Expected Returns:</h4>
+<p>The investment shall generate returns in compliance with Islamic principles, which may include profits from permissible activities such as trade, rental income, and ethical investments.</p>
+
+<h4>Term and Maturity:</h4>
+<p>The investment term shall be for the agreed-upon duration, with the option for the investor to extend or terminate the investment at maturity.</p>
+
+<h4>Withdrawal Restrictions:</h4>
+<p>The investor acknowledges that early withdrawal of funds may be subject to penalties or restrictions as outlined in the terms and conditions of this agreement.</p>
+
+<h4>Risk Disclosure:</h4>
+<p>The investor acknowledges that all investments carry inherent risks, including the risk of loss of principal or investment returns. The investor agrees to bear all investment risks associated with the Islamic investment product.</p>
+
+<h4>Governing Law:</h4>
+<p>This agreement shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Investor: ___________________________ Date: ________________</p>
+
+<p class="small-text">By signing below, the parties acknowledge that they have read and agree to the terms and conditions outlined in this Islamic Investment Product Agreement.</p>
+</body>
+</html>

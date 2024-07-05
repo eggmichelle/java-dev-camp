@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Long-Term Investment Product Agreement</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Long-Term Investment Product Agreement</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Investment Company</span></p>
+        </div>
+        <div class="row">
+            <p><b>Investor: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Investment Account Number: </b><span>INV-759462358</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span>Upon investors retirement</span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Investment Details:</h4>
+<p>This Long-Term Investment Product Agreement provides a way for users to invest their money over the long term,
+    specifically for Retirement Funds.</p>
+
+<h4>Investment Strategy:</h4>
+<p>The investor agrees to invest their money in accordance with the investment strategy outlined by the provider, which
+    may include diversification across various asset classes.</p>
+
+<h4>Investment Amount:</h4>
+<p>The investor agrees to deposit an initial investment amount of R<span
+        th:text="${orderItem.getProduct().getPrice()}"></span>.00 into the investment account, with the option to make
+    additional contributions as specified by the provider.</p>
+
+<h4>Term and Maturity:</h4>
+<p>The investment term shall be for the long term, with the investment intended to mature upon retirement or at a
+    specified date agreed upon by both parties.</p>
+
+<h4>Withdrawal Restrictions:</h4>
+<p>The investor acknowledges that early withdrawal of funds may be subject to penalties or restrictions as outlined in
+    the terms and conditions of this agreement.</p>
+
+<h4>Risk Disclosure:</h4>
+<p>The investor acknowledges that all investments carry inherent risks, including the risk of loss of principal or
+    investment returns. The investor agrees to bear all investment risks associated with the investment product.</p>
+
+<h4>Governing Law:</h4>
+<p>This agreement shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Investor: ___________________________ Date: ________________</p>
+
+<p class="small-text">By signing below, the parties acknowledge that they have read and agree to the terms and
+    conditions outlined in this Long-Term Investment Product Agreement.</p>
+</body>
+</html>

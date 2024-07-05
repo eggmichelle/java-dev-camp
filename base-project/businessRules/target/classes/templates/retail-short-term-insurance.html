@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Retail Short Term Insurance Contract</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Retail Short Term Insurance Contract</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Insurance Company Ltd.</span></p>
+        </div>
+        <div class="row">
+            <p><b>Insured: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Policy Number: </b><span>POL-73849201</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span th:text="${endDate}"></span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Coverage Details:</h4>
+<p>This Retail Short Term Insurance policy provides coverage for the following items:</p>
+<ul>
+    <li>Electronics</li>
+    <li>Household Items</li>
+    <li>Jewellery</li>
+    <li>Cars</li>
+</ul>
+
+<h4>Coverage Period:</h4>
+<p>This policy provides coverage for a period of 6 months from the effective
+    date to the termination date mentioned above.</p>
+
+<h4>Premium:</h4>
+<p>The insured agrees to pay a premium of R<span th:text="${orderItem.getProduct().getPrice()}"></span>.00 for the
+    coverage period mentioned above.</p>
+
+<h4>Coverage Limit:</h4>
+<p>The coverage limit for each item shall be as follows:</p>
+<ul>
+    <li>Electronics: R2000.00</li>
+    <li>Household Items: R1500.00</li>
+    <li>Jewellery: R3000.00</li>
+    <li>Cars: R10 000.00</li>
+</ul>
+
+<h4>Deductible:</h4>
+<p>The insured agrees to pay a deductible of R500.00 for each claim made under this policy.</p>
+
+<h4>Claims Process:</h4>
+<p>In the event of a covered loss, the insured shall promptly notify the provider and submit a claim in accordance with
+    the terms and conditions outlined in this contract.</p>
+
+<h4>Terms and Conditions:</h4>
+<ol>
+    <li>The insured shall provide accurate and complete information regarding the items to be covered under this
+        policy.
+    </li>
+    <li>The insured shall take reasonable precautions to prevent loss or damage to the insured items.</li>
+    <li>The provider reserves the right to investigate any claims made under this policy and may request supporting
+        documentation.
+    </li>
+    <li>This policy may be renewed subject to the terms and conditions agreed upon by both parties.</li>
+</ol>
+
+<h4>Cancellation:</h4>
+<p>Either party may cancel this policy upon written notice to the other party. In the event of cancellation, the
+    provider shall refund any unearned premium on a pro-rata basis.</p>
+
+<h4>Governing Law:</h4>
+<p>This contract shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Insured: ____________________________ Date: ________________</p>
+
+<p class="small-text">By signing above, the parties acknowledge that they have read and agree to the terms and
+    conditions outlined in this
+    Retail Short Term Insurance contract.</p>
+</body>
+</html>

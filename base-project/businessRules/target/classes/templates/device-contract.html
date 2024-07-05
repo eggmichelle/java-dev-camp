@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Device Contract</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-bottom: -5px;
+            padding-top: 10px;
+        }
+
+        .title {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .row p {
+            display: inline;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            padding-top: 20px;
+        }
+
+        .small-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Device Contract</h2>
+<div class="row">
+    <div class="left">
+        <div class="row">
+            <p><b>Provider: </b><span>XYZ Device Company Ltd.</span></p>
+        </div>
+        <div class="row">
+            <p><b>Customer: </b><span th:text="${customer.getFirstName()}"></span> <span
+                    th:text="${customer.getLastName()}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Contract Number: </b><span>CON-759634</span></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p><b>Effective Date: </b><span th:text="${startDate}"></span></p>
+        </div>
+        <div class="row">
+            <p><b>Termination Date: </b><span th:text="${endDate}"></span></p>
+        </div>
+    </div>
+</div>
+
+<h4>Device Details:</h4>
+<p>This Device Contract allows the customer to take out the following device(s) on contract:</p>
+<ul>
+    <li>Smartphone</li>
+    <li>Laptop</li>
+</ul>
+
+<h4>Contract Term:</h4>
+<p>The contract term shall be for a period of 24 months from the effective date to the termination date mentioned
+    above.</p>
+
+<h4>Monthly Payment:</h4>
+<p>The customer agrees to pay a monthly fee of R<span th:text="${orderItem.getProduct().getPrice()}"></span>.00 for the duration of the contract term.</p>
+
+<h4>Device Ownership:</h4>
+<p>The device(s) shall remain the property of the provider until the contract is terminated and all outstanding
+    payments are made.</p>
+
+<h4>Usage Restrictions:</h4>
+<p>The customer agrees to use the device(s) in accordance with the terms and conditions outlined in this contract and
+    any applicable usage policies provided by the provider.</p>
+
+<h4>Maintenance and Repairs:</h4>
+<p>The provider shall be responsible for any maintenance or repairs necessary due to manufacturing defects during the
+    contract term.</p>
+
+<h4>Loss or Damage:</h4>
+<p>The customer shall be responsible for any loss or damage to the device(s) during the contract term and agrees to pay
+    the provider for any necessary repairs or replacement costs.</p>
+
+<h4>Early Termination:</h4>
+<p>In the event of early termination of the contract, the customer may be subject to additional fees or penalties.</p>
+
+<h4>Governing Law:</h4>
+<p>This contract shall be governed by and construed in accordance with the laws of Johannesburg, South Africa.</p>
+
+<h4 class="signature">Signature:</h4>
+<p>Provider: ___________________________ Date: ________________</p>
+<p>Customer: __________________________ Date: ________________</p>
+
+<p class="small-text">By signing below, the parties acknowledge that they have read and agree to the terms and
+    conditions outlined in this Device Contract.</p>
+</body>
+</html>
