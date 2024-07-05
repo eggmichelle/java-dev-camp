@@ -1,0 +1,46 @@
+<definitions name = "CreditCheckService"
+   targetNamespace = "http://localhost:8085/fraudcheck"
+   xmlns = "http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns = "http://localhost:8085/fraudcheck"
+	xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+	<message name = "FraudCheckRequest">
+		<part name = "customerId" type = "xsd:int"/>
+		<part name = "idNumber" type = "xsd:string"/>
+	</message>
+	<message name = "FraudCheckResponse">
+		<part name = "bankStatus" type = "xsd:string"/>
+		<part name = "nationalStatus" type = "xsd:string"/>
+	</message>
+	<portType name = "Fraud_PortType">
+		<operation name = "FraudCheck">
+			<input message = "tns:FraudCheckRequest"/>
+			<output message = "tns:FraudCheckResponse"/>
+		</operation>
+	</portType>
+	<binding name = "Fraud_Binding" type = "tns:Fraud_PortType">
+		<soap:binding style = "rpc" transport = "http://schemas.xmlsoap.org/soap/http"/>
+		<operation name = "FraudCheck">
+			<soap:operation soapAction = "FraudCheck"/>
+			<input>
+				<soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "entelect:devcamp:fraudheckservice"
+               use = "encoded"/>
+			</input>
+			<output>
+				<soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "entelect:devcamp:fraudcheckservice"
+               use = "encoded"/>
+			</output>
+		</operation>
+	</binding>
+	<service name = "Credit_Service">
+		<documentation>Definition of Fraud Check Service</documentation>
+		<port binding = "tns:Fraud_Binding" name = "Fraud_Port">
+			<soap:address
+            location = "http://localhost:8085/FraudCheck" />
+		</port>
+	</service>
+</definitions>
